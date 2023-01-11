@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".ViewTransaction">
 
-
+    <TextView
+        android:id="@+id/txtv_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Transaksi"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/txtv_heading">
         <ListView
             android:id="@+id/myListView"
             android:layout_width="match_parent"
