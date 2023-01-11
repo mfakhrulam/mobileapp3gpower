@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UsrTransaction">
+    <TextView
+        android:id="@+id/txtv_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Checkout"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/txtv_subheading_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="24dp"
+        android:text="Barang"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_below="@id/txtv_heading"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtv_subheading_1">
+        <TextView
+            android:id="@+id/txtv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="ID:"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txtv_id_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Nama:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_id"/>
+
+        <TextView
+            android:id="@+id/txtv_name_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_name"
+            android:layout_below="@id/txtv_id_inp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Harga:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_name_inp"/>
+
+        <TextView
+            android:id="@+id/txtv_price_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_name_inp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_warranty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Garansi:"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_price_inp"/>
+
+        <TextView
+            android:id="@+id/txtv_warranty_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_price_inp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/txtv_subheading_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="24dp"
+        android:text="Pembeli"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_below="@id/relative_1"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtv_subheading_2">
+        <TextView
+            android:id="@+id/txtv_id_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="ID:"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txtv_id_inp_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/txtv_name_2"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_name_2"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Nama:"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_id_2"/>
+
+        <TextView
+            android:id="@+id/txtv_name_inp_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtv_name_2"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_name_2"
+            android:layout_below="@id/txtv_id_inp_2"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Beli:"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/amounts"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/black"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_regular"
+            />
+
+        <Button
+            android:id="@+id/btn_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Checkout"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

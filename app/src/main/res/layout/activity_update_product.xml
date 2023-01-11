@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProduct">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/txtv_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:text="Update Produk"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/txtv_subheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Update/Edit data produk"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_alignStart="@+id/txtv_heading"
+            android:layout_below="@+id/txtv_heading"
+            />
+
+        <TextView
+            android:id="@+id/txtv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Nama Produk"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_alignStart="@+id/txtv_heading"
+            android:layout_below="@id/txtv_subheading"/>
+
+        <EditText
+            android:id="@+id/inp_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Masukkan Nama Produk"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:layout_below="@id/txtv_name" />
+
+        <TextView
+            android:id="@+id/txtv_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Stok"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_alignStart="@+id/txtv_heading"
+            android:layout_below="@id/inp_name"/>
+
+        <EditText
+            android:id="@+id/inp_stock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Masukkan Stok"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:layout_below="@id/txtv_stock" />
+
+        <TextView
+            android:id="@+id/txtv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Harga"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_alignStart="@+id/txtv_heading"
+            android:layout_below="@id/inp_stock"/>
+
+        <EditText
+            android:id="@+id/inp_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Masukkan Harga"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:layout_below="@id/txtv_price" />
+
+        <TextView
+            android:id="@+id/txtv_warranty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Garansi"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_alignStart="@+id/txtv_heading"
+            android:layout_below="@id/inp_price"/>
+
+        <EditText
+            android:id="@+id/inp_warranty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Masukkan Garansi"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:layout_below="@id/txtv_warranty" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Simpan"
+            android:textSize="16sp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_below="@id/inp_warranty"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

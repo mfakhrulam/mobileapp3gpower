@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txtv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="ID:"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txtv_id_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_stock"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Nama:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_id"/>
+
+        <TextView
+            android:id="@+id/txtv_name_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_name"
+            android:layout_below="@id/txtv_id_inp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Stok:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_name"/>
+
+        <TextView
+            android:id="@+id/txtv_stock_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_name_inp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Harga:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_stock_inp"/>
+
+        <TextView
+            android:id="@+id/txtv_price_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_stock_inp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_warranty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Garansi:"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_price_inp"/>
+
+        <TextView
+            android:id="@+id/txtv_warranty_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_price_inp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

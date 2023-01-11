@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtv_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Transaksi"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtv_heading">
+        <TextView
+            android:id="@+id/txtv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="ID Transaksi:"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txtv_id_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/txtv_id"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_id"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtv_id_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="ID User:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtv_id"/>
+
+        <TextView
+            android:id="@+id/txtv_id_user_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtv_id"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_id"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtv_id"/>
+
+        <TextView
+            android:id="@+id/txtv_id_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="ID Product:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtv_id_user"/>
+
+        <TextView
+            android:id="@+id/txtv_id_product_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtv_id"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_id"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtv_id_user"/>
+
+        <TextView
+            android:id="@+id/txtv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Tanggal:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtv_id_product"/>
+
+        <TextView
+            android:id="@+id/txtv_date_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtv_id"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_id"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtv_id_product"/>
+
+        <TextView
+            android:id="@+id/txtv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Total:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtv_date"/>
+
+        <TextView
+            android:id="@+id/txtv_total_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtv_id"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toRightOf="@id/txtv_id"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtv_date"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
