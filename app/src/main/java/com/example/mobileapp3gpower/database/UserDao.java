@@ -17,7 +17,7 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE userId IN (:userIds)")
     List<User> loadAllByIds(int[] userIds);
 
-    @Query("SELECT * FROM user WHERE email = :email AND password = :password LIMIT 1")
+    @Query("SELECT * FROM user WHERE email = :email AND password = :password AND role = 'user' LIMIT 1")
     User findByEmailAndPasswordUser(String email, String password);
 
     @Query("SELECT * FROM user WHERE email = :email AND password = :password AND role = 'admin' LIMIT 1")

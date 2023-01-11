@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String USER_ROLE_KEY = "key_user_role";
     private static final String AUTO_LOGIN_KEY = "key_auto_login";
     private static final String PREFERENCE_KEY = "mobileapp3gpower_sharedprefs";
-    private static final String  LOGIN_USER_KEY = "key_id_user";
+    private static final String LOGIN_USER_KEY = "key_id_user";
 
     private SharedPreferences sharedPrefs;
 
@@ -60,8 +60,11 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean valid = auth();
-                if (valid) {
+                User valid = authUser();
+                if (valid != null) {
+                    SharedPreferences.Editor editor = sharedPrefs.edit();
+                    editor.putInt(LOGIN_USER_KEY, valid.userId);
+                    editor.apply();
                     Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(i);
                     makeAutoLogin();
@@ -88,23 +91,19 @@ public class LoginActivity extends AppCompatActivity {
         autoLogin();
     }
 
-    private boolean auth() {
+    private User authUser() {
         String currentEmail = this.inpEmail.getText().toString().trim();
         String currentPassword = this.inpPassword.getText().toString().trim();
 
         UserDao userDao = AppDBProvider.getInstance(this).userDao();
 
-        if (sharedPrefs.getString(USER_ROLE_KEY, "user") == "admin") {
+        if (sharedPrefs.getString(USER_ROLE_KEY, "user").equals("admin")) {
             currentUser = userDao.findByEmailAndPasswordAdmin(currentEmail, currentPassword);
         } else {
             currentUser = userDao.findByEmailAndPasswordUser(currentEmail, currentPassword);
         }
 
-//        SharedPreferences.Editor editor = this.sharedPrefs.edit();
-//        editor.putInt(LOGIN_USER_KEY, currentUser.userId);
-//        editor.apply();
-
-        return currentUser!=null?true:false;
+        return currentUser;
     }
 
     private void autoLogin() {

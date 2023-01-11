@@ -13,6 +13,8 @@ public class HomeActivity extends AppCompatActivity {
     private static final String USER_ROLE_KEY = "key_user_role";
     private static final String AUTO_LOGIN_KEY = "key_auto_login";
     private static final String PREFERENCE_KEY = "mobileapp3gpower_sharedprefs";
+    private static final String LOGIN_USER_KEY = "key_id_user";
+
 
     private SharedPreferences sharedPrefs;
     private Button btnProduct, btnTransaction, btnOurContact, btnLogout;
@@ -33,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedPrefs.edit();
                 editor.remove(AUTO_LOGIN_KEY);
+                editor.remove(LOGIN_USER_KEY);
                 editor.remove(USER_ROLE_KEY);
                 editor.apply();
                 Intent i = new Intent(HomeActivity.this, OnboardingActivity.class);
