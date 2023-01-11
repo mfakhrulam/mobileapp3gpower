@@ -59,6 +59,15 @@ public class OnboardingActivity extends AppCompatActivity {
         autoLogin();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        boolean auto = this.sharedPrefs.getBoolean(AUTO_LOGIN_KEY, false);
+        if (auto) {
+            finish();
+        }
+    }
+
     private void autoLogin() {
         boolean auto = this.sharedPrefs.getBoolean(AUTO_LOGIN_KEY, false);
         if (auto) {
