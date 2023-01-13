@@ -29,6 +29,9 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE userId = :userId LIMIT 1")
     User findById(int userId);
 
+    @Query("SELECT * FROM user WHERE role = 'admin' LIMIT 1")
+    User findAdmin();
+
     @Insert
     void insertAll(User... users);
 
