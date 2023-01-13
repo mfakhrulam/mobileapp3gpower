@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,11 +25,14 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         sharedPrefs = getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE);
         btnLogout = findViewById(R.id.btn_logout);
         btnProduct = findViewById(R.id.btn_product);
         btnTransaction = findViewById(R.id.btn_transaction);
         btnOurContact = findViewById(R.id.btn_contact);
+
+        Log.d("print", String.valueOf(sharedPrefs.getInt(LOGIN_USER_KEY, -1)));
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
