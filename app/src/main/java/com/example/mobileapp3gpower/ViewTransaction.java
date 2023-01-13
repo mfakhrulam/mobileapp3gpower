@@ -16,6 +16,7 @@ import android.provider.BaseColumns;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class ViewTransaction extends AppCompatActivity {
     private ProductDao productDao;
     private UserDao userDao;
     private TransactionDao transactionDao;
+    private ImageButton btnBack;
 
     private Cursor csr;
     private SimpleCursorAdapter sca;
@@ -54,6 +56,14 @@ public class ViewTransaction extends AppCompatActivity {
         productDao = AppDBProvider.getInstance(this).productDao();
         userDao = AppDBProvider.getInstance(this).userDao();
         transactionDao = AppDBProvider.getInstance(this).transactionDao();
+        btnBack = findViewById(R.id.back_btn);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         RefreshListView();
     }

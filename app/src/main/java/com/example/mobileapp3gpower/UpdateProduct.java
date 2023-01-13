@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.mobileapp3gpower.database.AppDBProvider;
@@ -18,6 +19,8 @@ public class UpdateProduct extends AppCompatActivity {
     private Button btnSave;
     private EditText inpName, inpStock, inpPrice, inpWarranty;
     private ProductDao productDao;
+    private ImageButton btnBack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class UpdateProduct extends AppCompatActivity {
 
 
         btnSave = findViewById(R.id.btn_save);
+        btnBack = findViewById(R.id.back_btn);
 
         inpName = findViewById(R.id.inp_name);
         inpStock = findViewById(R.id.inp_stock);
@@ -54,6 +58,13 @@ public class UpdateProduct extends AppCompatActivity {
 
                     finish();
                 }
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
