@@ -49,7 +49,7 @@ public class UsrTransaction extends AppCompatActivity {
 
     private EditText inpAmounts;
 
-    private TextView inpIdProduct, inpNameProduct, inpPriceProduct, inpWarrantyProduct;
+    private TextView inpIdProduct, inpNameProduct, inpPriceProduct, inpWarrantyProduct, inpStock;
     private TextView inpIdUser, inpNameUser, txtv_total;
 
     @Override
@@ -80,6 +80,9 @@ public class UsrTransaction extends AppCompatActivity {
         inpPriceProduct.setText("Rp." + String.valueOf(currentProduct.price));
         inpWarrantyProduct = findViewById(R.id.txtv_warranty_inp);
         inpWarrantyProduct.setText(String.valueOf(currentProduct.warranty) + " tahun");
+        inpStock = findViewById(R.id.txtv_stock_inp);
+        inpStock.setText(String.valueOf(currentProduct.stock));
+
 
         inpIdUser = findViewById(R.id.txtv_id_inp_2);
         inpIdUser.setText(String.valueOf(currentUser.userId));
@@ -106,9 +109,12 @@ public class UsrTransaction extends AppCompatActivity {
                             currentUser.userId,
                             currentProduct.productId,
                             date,
+                            amounts,
                             total
                             );
                     transactionDao.insertAll(currentTransaction);
+                    // Update stok
+                    productDao.update(currentProduct.productId, (currentProduct.stock-amounts));
                     finish();
                 }
             }
@@ -163,4 +169,5 @@ public class UsrTransaction extends AppCompatActivity {
         }
         return false;
     }
+
 }
