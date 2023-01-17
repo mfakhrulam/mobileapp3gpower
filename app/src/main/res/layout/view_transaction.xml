@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginHorizontal="8dp"
             android:layout_marginVertical="4dp"
@@ -11,13 +11,14 @@
             android:layout_height="wrap_content">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="8dp">
 
                         <TextView
                             android:id="@+id/txtv_name_product_inp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginHorizontal="24dp"
                             android:layout_marginTop="8dp"
                             android:fontFamily="@font/montserrat_bold"
                             android:text="Nama Produk"
@@ -28,7 +29,7 @@
                             android:id="@+id/txtv_detail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginHorizontal="24dp"
                             android:fontFamily="@font/montserrat_regular"
                             android:text="1 X Rp. 150000"
                             android:textColor="@color/black"
@@ -39,7 +40,7 @@
                             android:id="@+id/txtv_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginHorizontal="24dp"
                             android:layout_marginBottom="8dp"
                             android:fontFamily="@font/montserrat_semi_bold"
                             android:text="Total:"
@@ -59,5 +60,5 @@
                             android:textSize="16sp"
                             android:layout_below="@+id/txtv_detail"/>
                 </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>
