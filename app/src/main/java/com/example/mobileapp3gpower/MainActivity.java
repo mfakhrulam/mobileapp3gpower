@@ -43,8 +43,13 @@ public class MainActivity extends AppCompatActivity {
             Product product_1 = new Product("Legion 5", 5, 5000000, 3);
             Product product_2 = new Product("Legion 6", 4, 6000000, 2);
             Product product_3 = new Product("Fantech HELLSCREAM GS205", 10, 99000, 0);
+            Product product_4 = new Product("Fantech HELLSCREAM G2345", 10, 19000, 0);
+            Product product_5 = new Product("Baseus Encok WM01", 8, 178000, 1);
+            Product product_6 = new Product("Baseus Encok WM02", 11, 198000, 1);
+            Product product_7 = new Product("Baseus Encok WM01 Pro", 6, 218000, 1);
+            Product product_8 = new Product("Baseus Encok WM02 Pro", 6, 238000, 1);
 
-            productDao.insertAll(product_1, product_2, product_3);
+            productDao.insertAll(product_1, product_2, product_3, product_4, product_5, product_6, product_7, product_8);
         }
 
         new Handler().postDelayed(new Runnable() {

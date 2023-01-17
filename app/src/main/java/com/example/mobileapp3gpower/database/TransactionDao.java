@@ -20,7 +20,7 @@ public interface TransactionDao {
     @Query("SELECT * FROM `transaction` WHERE transactionId = :transactionId LIMIT 1")
     Transaction findById(int transactionId);
 
-    @Query("SELECT * FROM `transaction` WHERE userId = :userId")
+    @Query("SELECT * FROM `transaction` WHERE userId = :userId ORDER BY transactionId DESC ")
     List<Transaction> findByUser(int userId);
 
     @Insert

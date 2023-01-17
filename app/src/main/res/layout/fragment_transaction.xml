@@ -29,7 +29,9 @@
             android:layout_marginTop="16dp"
             android:layout_below="@id/txtv_heading">
             <ListView
+                android:divider="@null"
                 android:id="@+id/myListView"
+                android:layout_marginHorizontal="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ListView>

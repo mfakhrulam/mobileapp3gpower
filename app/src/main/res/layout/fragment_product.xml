@@ -17,7 +17,7 @@
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="16dp"
-            android:text="Jelajahi Produk"
+            android:text="Kelola Produk"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/black"
             android:textSize="32sp"
@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtv_heading"
+            android:layout_marginBottom="60dp"
              />
 
     </RelativeLayout>

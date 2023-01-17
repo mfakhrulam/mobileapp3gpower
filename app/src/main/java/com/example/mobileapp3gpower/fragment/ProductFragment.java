@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobileapp3gpower.AddProduct;
@@ -33,7 +34,6 @@ import com.example.mobileapp3gpower.UsrTransaction;
 import com.example.mobileapp3gpower.database.AppDBProvider;
 import com.example.mobileapp3gpower.database.Product;
 import com.example.mobileapp3gpower.database.ProductDao;
-import com.example.mobileapp3gpower.databinding.ActivityListProductBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -50,9 +50,6 @@ public class ProductFragment extends Fragment {
     private static final String PREFERENCE_KEY = "mobileapp3gpower_sharedprefs";
     private static final String  LOGIN_USER_KEY = "key_id_user";
 
-    private Toolbar toolbar;
-
-    private ActivityListProductBinding binding;
     private ListView myListView;
     private SharedPreferences sharedPrefs;
     private ProductDao productDao;
@@ -103,14 +100,10 @@ public class ProductFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-//        binding = ActivityListProductBinding.inflate(getLayoutInflater());
-//        View view = binding.getRoot();
 
         sharedPrefs = this.getActivity().getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE);
         productDao = AppDBProvider.getInstance(getActivity()).productDao();
 
-//        return view;
         return inflater.inflate(R.layout.fragment_product, container, false);
     }
 
@@ -121,6 +114,12 @@ public class ProductFragment extends Fragment {
     }
 
     @Override
+    public void onDestroy() {
+        super.onDestroy();
+        csr.close();
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         myListView = getView().findViewById(R.id.myListView);
@@ -128,6 +127,8 @@ public class ProductFragment extends Fragment {
 
         if (Objects.equals(sharedPrefs.getString(USER_ROLE_KEY, "user"), "user")) {
             Log.d("print", sharedPrefs.getString(USER_ROLE_KEY, "user"));
+            TextView heading = getView().findViewById(R.id.txtv_heading);
+            heading.setText("Jelajahi Produk");
             fab.setVisibility(View.GONE);
         }
 
@@ -138,8 +139,10 @@ public class ProductFragment extends Fragment {
                 startActivity(i);
             }
         });
+
         RefreshListView();
     }
+
     private void RefreshListView() {
         csr = getCursor();
         if (sca == null) {
@@ -223,7 +226,7 @@ public class ProductFragment extends Fragment {
                 0
         );
         for (Product p: productDao.getAll()) {
-            mxcsr.addRow(new Object[]{p.productId,p.name,p.stock,("Rp."+p.price), (p.warranty+" tahun")});
+            mxcsr.addRow(new Object[]{p.productId,p.name,p.stock,("Rp. "+p.price), (p.warranty+" tahun")});
         }
         return mxcsr;
     }
