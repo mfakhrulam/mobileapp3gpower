@@ -42,6 +42,7 @@ public class ListProduct extends AppCompatActivity {
 
     private Toolbar toolbar;
 
+
     private ActivityListProductBinding binding;
     private ListView myListView;
     private SharedPreferences sharedPrefs;
