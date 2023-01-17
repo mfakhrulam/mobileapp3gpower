@@ -20,13 +20,17 @@ public class Transaction {
     @ColumnInfo(name = "date")
     public Date date;
 
+    @ColumnInfo(name = "amounts")
+    public int amount;
+
     @ColumnInfo(name = "total")
     public int total;
 
-    public Transaction(int userId, int productId, Date date, int total) {
+    public Transaction(int userId, int productId, Date date, int amount, int total) {
         this.userId = userId;
         this.productId = productId;
         this.date = date;
+        this.amount = amount;
         this.total = total;
     }
 }
