@@ -19,11 +19,17 @@ public interface ProductDao {
     @Query("SELECT * FROM product WHERE productId = :productId LIMIT 1")
     Product findById(int productId);
 
+    @Query("SELECT * FROM product LIMIT 1")
+    Product findProduct();
+
     @Insert
     void insertAll(Product... products);
 
     @Update
     void update(Product product);
+
+    @Query("UPDATE product SET stock=:stock WHERE productId = :productId")
+    void update(int productId, int stock);
 
     @Delete
     void delete(Product product);
