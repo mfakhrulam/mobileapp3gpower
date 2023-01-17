@@ -1,14 +1,22 @@
 package com.example.mobileapp3gpower.fragment;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.mobileapp3gpower.OnboardingActivity;
 import com.example.mobileapp3gpower.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +24,11 @@ import com.example.mobileapp3gpower.R;
  * create an instance of this fragment.
  */
 public class AccountFragment extends Fragment {
+    private SharedPreferences sharedPrefs;
+    private static final String USER_ROLE_KEY = "key_user_role";
+    private static final String AUTO_LOGIN_KEY = "key_auto_login";
+    private static final String PREFERENCE_KEY = "mobileapp3gpower_sharedprefs";
+    private static final String LOGIN_USER_KEY = "key_id_user";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,5 +75,27 @@ public class AccountFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_account, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button btnLogout = getView().findViewById(R.id.btn_logout);
+        sharedPrefs = getActivity().getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE);
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPrefs.edit();
+                editor.remove(AUTO_LOGIN_KEY);
+                editor.remove(LOGIN_USER_KEY);
+                editor.remove(USER_ROLE_KEY);
+                editor.apply();
+                Intent i = new Intent(getActivity(), OnboardingActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+
     }
 }
