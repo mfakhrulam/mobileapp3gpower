@@ -83,7 +83,6 @@ public class UsrTransaction extends AppCompatActivity {
         inpStock = findViewById(R.id.txtv_stock_inp);
         inpStock.setText(String.valueOf(currentProduct.stock));
 
-
         inpIdUser = findViewById(R.id.txtv_id_inp_2);
         inpIdUser.setText(String.valueOf(currentUser.userId));
         inpNameUser = findViewById(R.id.txtv_name_inp_2);

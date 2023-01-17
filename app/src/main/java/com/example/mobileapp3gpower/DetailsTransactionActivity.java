@@ -2,6 +2,7 @@ package com.example.mobileapp3gpower;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,7 @@ public class DetailsTransactionActivity extends AppCompatActivity {
     private TransactionDao transactionDao;
 
     private ImageButton btnBack;
+    private Button btnBuyAgain;
 
     private TextView inpId, inpDate;
     private TextView inpIdProduct, inpNameProduct, inpPriceProduct, inpAmount;
@@ -45,8 +47,9 @@ public class DetailsTransactionActivity extends AppCompatActivity {
         Product product = productDao.findById(transaction.productId);
         User user = userDao.findById(transaction.userId);
 
-        // inisialisasi button back
+        // inisialisasi button
         btnBack = findViewById(R.id.back_btn);
+        btnBuyAgain = findViewById(R.id.btn_buy_again);
 
         // inisisalisasi textview
         inpId = findViewById(R.id.txtv_id_inp);
@@ -81,6 +84,18 @@ public class DetailsTransactionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        btnBuyAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), UsrTransaction.class);
+                Bundle extras = new Bundle();
+                extras.putInt("productId", transaction.productId);
+                extras.putInt("userId", transaction.userId);
+                intent.putExtras(extras);
+                startActivity(intent);
             }
         });
     }

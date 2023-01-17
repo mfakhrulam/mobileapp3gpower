@@ -245,7 +245,19 @@
             android:layout_below="@id/txtv_name_user_inp"
             android:textSize="16sp" />
 
-
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_buy_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Beli Lagi"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
