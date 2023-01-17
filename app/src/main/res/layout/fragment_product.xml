@@ -9,6 +9,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/background"
         >
         <TextView
             android:id="@+id/txtv_heading"
@@ -19,7 +20,7 @@
             android:layout_marginBottom="16dp"
             android:text="Kelola Produk"
             android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/black"
+            android:textColor="@color/primary"
             android:textSize="32sp"
             android:layout_alignParentTop="true"/>
 

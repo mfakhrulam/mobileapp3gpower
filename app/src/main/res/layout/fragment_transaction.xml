@@ -8,6 +8,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/background"
         >
 
         <TextView
@@ -18,7 +19,7 @@
             android:layout_marginTop="32dp"
             android:text="Transaksi"
             android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/black"
+            android:textColor="@color/primary"
             android:textSize="32sp"
             android:layout_alignParentTop="true"/>
 
@@ -31,7 +32,6 @@
             <ListView
                 android:divider="@null"
                 android:id="@+id/myListView"
-                android:layout_marginHorizontal="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ListView>
