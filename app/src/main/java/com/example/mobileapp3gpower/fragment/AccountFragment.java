@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.mobileapp3gpower.EditProfileActivity;
 import com.example.mobileapp3gpower.OnboardingActivity;
 import com.example.mobileapp3gpower.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -114,7 +115,8 @@ public class AccountFragment extends Fragment implements AdapterView.OnItemClick
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         switch (i){
             case 0:
-                Toast.makeText(getActivity(), "Edit Profil", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
                 break;
             case 1:
                 Toast.makeText(getActivity(), "Ubah Kata Sandi", Toast.LENGTH_SHORT).show();
