@@ -29,11 +29,23 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE userId = :userId LIMIT 1")
     User findById(int userId);
 
+    @Query("SELECT * FROM user WHERE role = 'admin' LIMIT 1")
+    User findAdmin();
+
+    @Query("SELECT * FROM user WHERE role = 'user' LIMIT 1")
+    User findUser();
+
     @Insert
     void insertAll(User... users);
 
     @Update
     void update(User user);
+
+    @Query("UPDATE user SET name = :name, email = :email WHERE userId = :userId")
+    void update(int userId, String name, String email);
+
+    @Query("UPDATE user SET password = :password WHERE userId = :userId")
+    void updatePassword(int userId, String password);
 
     @Delete
     void delete(User user);

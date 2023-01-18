@@ -35,7 +35,7 @@ public class ContactActivity extends AppCompatActivity {
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://web.whatsapp.com/send?phone=62895616797777");
+                Uri uri = Uri.parse("wa.me/62895616797777");
                 Intent i = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(i);
             }

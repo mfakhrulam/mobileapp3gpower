@@ -16,6 +16,34 @@
         android:theme="@style/Theme.Mobileapp3gpower"
         tools:targetApi="31">
         <activity
+            android:name=".OurContactActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".EditPasswordActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DetailsTransactionActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ViewTransaction"
             android:exported="false">
             <meta-data
@@ -73,15 +101,6 @@
             android:name=".ListProduct"
             android:exported="false"
             android:label="@string/title_activity_list_product"
-            android:theme="@style/Theme.Mobileapp3gpower.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ScrollingActivity"
-            android:exported="false"
-            android:label="@string/title_activity_scrolling"
             android:theme="@style/Theme.Mobileapp3gpower.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"

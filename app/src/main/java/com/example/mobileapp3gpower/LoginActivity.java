@@ -32,12 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     private TextView daftar, txtv_1;
     private User currentUser;
 
-    private static final String EMAIL_DUMMY_ADMIN = "admin@gmail.com";
-    private static final String PASS_DUMMY_ADMIN = "admin";
-
-    private static final String EMAIL_DUMMY_USER = "user@gmail.com";
-    private static final String PASS_DUMMY_USER = "user";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +44,14 @@ public class LoginActivity extends AppCompatActivity {
         txtv_1 = findViewById(R.id.txtv_1);
         inpEmail = findViewById(R.id.inp_email);
         inpPassword = findViewById(R.id.inp_password);
-//
-//        User user = new User("amin@gmail.com", "Fakhrul Amin", "12345678", "admin");
-//        UserDao userDao = AppDBProvider.getInstance(getApplicationContext()).userDao();
-//        userDao.insertAll(user);
-//        Log.d("print", String.valueOf(user.name));
 
+        UserDao userDao = AppDBProvider.getInstance(getApplicationContext()).userDao();
+        User admin = userDao.findAdmin();
+        if  (admin == null) {
+            User newAdmin = new User("amin@gmail.com", "Fakhrul Amin", "12345678", "admin");
+            userDao.insertAll(newAdmin);
+            Log.d("print", String.valueOf(newAdmin.name));
+        }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPrefs.edit();
                     editor.putInt(LOGIN_USER_KEY, valid.userId);
                     editor.apply();
+                    Log.d("print", String.valueOf(sharedPrefs.getInt(LOGIN_USER_KEY, -1)));
                     Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(i);
                     makeAutoLogin();

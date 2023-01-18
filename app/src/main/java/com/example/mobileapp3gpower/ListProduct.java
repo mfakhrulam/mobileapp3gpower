@@ -42,6 +42,7 @@ public class ListProduct extends AppCompatActivity {
 
     private Toolbar toolbar;
 
+
     private ActivityListProductBinding binding;
     private ListView myListView;
     private SharedPreferences sharedPrefs;
@@ -75,11 +76,19 @@ public class ListProduct extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         if (Objects.equals(sharedPrefs.getString(USER_ROLE_KEY, "user"), "user")) {
             Log.d("print", sharedPrefs.getString(USER_ROLE_KEY, "user"));
             toolbar.setTitle("Jelajahi Produk");
             binding.fab.setVisibility(View.GONE);
         }
+
+        binding.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
         RefreshListView();
@@ -100,10 +109,10 @@ public class ListProduct extends AppCompatActivity {
 
             // jika admin maka ada CRUD
             if (Objects.equals(sharedPrefs.getString(USER_ROLE_KEY, "user"), "admin")) {
-                myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @SuppressLint("Range")
                     @Override
-                    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         AlertDialog.Builder builder = new
                                 AlertDialog.Builder(ListProduct.this);
                         builder.setTitle("Pilihan");
@@ -135,7 +144,6 @@ public class ListProduct extends AppCompatActivity {
                                     }
                                 });
                         builder.create().show();
-                        return true;
                     }
                 });
             } else {
@@ -144,12 +152,14 @@ public class ListProduct extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Intent intent = new Intent(getApplicationContext(), UsrTransaction.class);
-                        intent.putExtra("productId", (int)l);
+                        Bundle extras = new Bundle();
+                        extras.putInt("productId",(int)l);
+                        extras.putInt("userId", sharedPrefs.getInt(LOGIN_USER_KEY, -1));
+                        intent.putExtras(extras);
                         startActivity(intent);
                     }
                 });
             }
-
         } else {
             sca.swapCursor(csr);
         }

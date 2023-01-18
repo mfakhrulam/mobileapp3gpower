@@ -4,19 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UsrTransaction">
+    tools:context=".UsrTransaction"
+    android:background="@color/background">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/back"
+        android:backgroundTint="@color/white"
+        android:id="@+id/back_btn"
+        />
+
     <TextView
         android:id="@+id/txtv_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="32dp"
         android:text="Checkout"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/black"
         android:textSize="32sp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_toRightOf="@id/back_btn"/>
 
     <TextView
         android:id="@+id/txtv_subheading_1"
@@ -108,7 +118,6 @@
             android:fontFamily="@font/montserrat_semi_bold"
             android:text="Garansi:"
             android:textColor="@color/black"
-            android:layout_marginBottom="8dp"
             android:textSize="16sp"
             android:layout_below="@id/txtv_price_inp"/>
 
@@ -117,6 +126,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtv_price_inp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:layout_toEndOf="@+id/txtv_name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/txtv_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Stok:"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:layout_below="@id/txtv_warranty_inp"/>
+
+        <TextView
+            android:id="@+id/txtv_stock_inp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_warranty_inp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/montserrat_semi_bold"
             android:layout_toEndOf="@+id/txtv_name"
@@ -190,11 +220,13 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/linear_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_below="@id/relative_2"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -215,21 +247,42 @@
             android:fontFamily="@font/montserrat_regular"
             />
 
-        <Button
-            android:id="@+id/btn_checkout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/rounded_button"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Checkout"
-            android:textAllCaps="false"
-            android:textSize="16sp" />
-
     </LinearLayout>
+    <TextView
+        android:id="@+id/txtv_subheading_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="24dp"
+        android:text="Total"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_below="@id/linear_1"/>
 
+    <TextView
+        android:id="@+id/txtv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="24dp"
+        android:text="Rp."
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_below="@id/txtv_subheading_3"/>
 
-
+    <Button
+        android:id="@+id/btn_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Checkout"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

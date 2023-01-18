@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class AddProduct extends AppCompatActivity {
 
     private Button btnAdd;
     private EditText inpName, inpStock, inpPrice, inpWarranty;
+    private ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class AddProduct extends AppCompatActivity {
         setContentView(R.layout.activity_add_product);
 
         btnAdd = findViewById(R.id.btn_add);
+        btnBack = findViewById(R.id.back_btn);
 
         inpName = findViewById(R.id.inp_name);
         inpStock = findViewById(R.id.inp_stock);
@@ -44,6 +47,13 @@ public class AddProduct extends AppCompatActivity {
 
                     finish();
                 }
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
