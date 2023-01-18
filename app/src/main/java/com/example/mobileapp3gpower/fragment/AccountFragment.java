@@ -12,7 +12,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.mobileapp3gpower.OnboardingActivity;
 import com.example.mobileapp3gpower.R;
@@ -23,7 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
  * Use the {@link AccountFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AccountFragment extends Fragment {
+public class AccountFragment extends Fragment implements AdapterView.OnItemClickListener {
     private SharedPreferences sharedPrefs;
     private static final String USER_ROLE_KEY = "key_user_role";
     private static final String AUTO_LOGIN_KEY = "key_auto_login";
@@ -83,6 +87,13 @@ public class AccountFragment extends Fragment {
         Button btnLogout = getView().findViewById(R.id.btn_logout);
         sharedPrefs = getActivity().getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE);
 
+        String[] settings = {"Edit Profil", "Ubah Kata Sandi", "Kontak Kami"};
+
+        ListView listView = getView().findViewById(R.id.listview_settings);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, settings);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,5 +108,20 @@ public class AccountFragment extends Fragment {
             }
         });
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (i){
+            case 0:
+                Toast.makeText(getActivity(), "Edit Profil", Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                Toast.makeText(getActivity(), "Ubah Kata Sandi", Toast.LENGTH_SHORT).show();
+                break;
+            case 2:
+                Toast.makeText(getActivity(), "Kontak Kami", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }
