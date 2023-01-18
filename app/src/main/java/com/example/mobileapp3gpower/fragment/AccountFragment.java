@@ -1,12 +1,14 @@
 package com.example.mobileapp3gpower.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,9 +20,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.mobileapp3gpower.EditPasswordActivity;
 import com.example.mobileapp3gpower.EditProfileActivity;
 import com.example.mobileapp3gpower.OnboardingActivity;
+import com.example.mobileapp3gpower.OurContactActivity;
 import com.example.mobileapp3gpower.R;
+import com.example.mobileapp3gpower.database.AppDBProvider;
+import com.example.mobileapp3gpower.database.User;
+import com.example.mobileapp3gpower.database.UserDao;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
@@ -88,7 +95,7 @@ public class AccountFragment extends Fragment implements AdapterView.OnItemClick
         Button btnLogout = getView().findViewById(R.id.btn_logout);
         sharedPrefs = getActivity().getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE);
 
-        String[] settings = {"Edit Profil", "Ubah Kata Sandi", "Kontak Kami"};
+        String[] settings = {"Edit Profil", "Ubah Kata Sandi", "Kontak Kami", "Hapus Akun"};
 
         ListView listView = getView().findViewById(R.id.listview_settings);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, settings);
@@ -115,14 +122,42 @@ public class AccountFragment extends Fragment implements AdapterView.OnItemClick
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         switch (i){
             case 0:
-                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getActivity(), EditProfileActivity.class));
                 break;
             case 1:
-                Toast.makeText(getActivity(), "Ubah Kata Sandi", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), EditPasswordActivity.class));
                 break;
             case 2:
-                Toast.makeText(getActivity(), "Kontak Kami", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), OurContactActivity.class));
+                break;
+            case 3:
+                new AlertDialog.Builder(getActivity())
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Hapus Akun")
+                        .setMessage("Apakah kamu yakin mau menghapus akun?")
+                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // hapus user
+                                UserDao userDao = AppDBProvider.getInstance(getActivity()).userDao();
+                                int userId = sharedPrefs.getInt(LOGIN_USER_KEY, -1);
+                                User deletedUser = userDao.findById(userId);
+                                userDao.delete(deletedUser);
+
+                                // hapus sharedpreferences key
+                                SharedPreferences.Editor editor = sharedPrefs.edit();
+                                editor.remove(AUTO_LOGIN_KEY);
+                                editor.remove(LOGIN_USER_KEY);
+                                editor.remove(USER_ROLE_KEY);
+                                editor.apply();
+                                Intent i = new Intent(getActivity(), OnboardingActivity.class);
+                                startActivity(i);
+                                getActivity().finish();
+                            }
+
+                        })
+                        .setNegativeButton("Tidak", null)
+                        .show();
                 break;
         }
     }
