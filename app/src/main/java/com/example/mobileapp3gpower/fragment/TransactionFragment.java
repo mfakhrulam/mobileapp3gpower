@@ -171,7 +171,7 @@ public class TransactionFragment extends Fragment {
             Product currentProduct = productDao.findById(p.productId);
             String detail = p.amount + " X Rp. " + currentProduct.price;
 
-            mxcsr.addRow(new Object[]{p.transactionId, currentProduct.name, detail, p.total});
+            mxcsr.addRow(new Object[]{p.transactionId, currentProduct.name, detail, "Rp. "+p.total});
         }
         return mxcsr;
     }
