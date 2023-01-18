@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OurContactActivity">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:backgroundTint="@color/white"
+        android:id="@+id/back_btn"
+        />
+
+    <TextView
+        android:id="@+id/txtv_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Kontak Kami"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:layout_toRightOf="@id/back_btn"/>
+
+    <TextView
+        android:id="@+id/txtv_paragraph_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtv_heading"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Saat ini kami memiliki 2 cabang, yaitu di kota Semarang dan Yogyakarta. "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="24dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_below="@id/txtv_paragraph_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btn_semarang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_outline_location_on_24"
+            android:text="Semarang"
+            android:textAllCaps="false"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/montserrat_semi_bold"
+            />
+
+        <Button
+            android:id="@+id/btn_yogya"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_outline_location_on_24"
+            android:text="Yogyakarta"
+            android:textAllCaps="false"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/montserrat_semi_bold"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtv_paragraph_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Jangan lupa kunjungi media sosial kami."
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="24dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtv_paragraph_2"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+        <Button
+            android:layout_marginTop="16dp"
+            android:id="@+id/btn_tiktok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/tiktok_svgrepo_com"
+            android:textAllCaps="false"
+            android:text="Tiktok"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/montserrat_semi_bold"
+            />
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:id="@+id/btn_instagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/brand_instagram_svgrepo_com"
+            android:textAllCaps="false"
+            android:text="Instagram"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/montserrat_semi_bold"
+            />
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:id="@+id/btn_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/mail"
+            android:textAllCaps="false"
+            android:text="Mail"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/montserrat_semi_bold"
+            />
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:id="@+id/btn_whatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/wa"
+            android:textAllCaps="false"
+            android:text="WhatsApp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/montserrat_semi_bold"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtv_paragraph_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear2"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Jangan lupa pula kunjungi github pengembang aplikasi ini."
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="24dp"/>
+
+    <Button
+        android:layout_marginTop="16dp"
+        android:id="@+id/btn_github"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/txtv_paragraph_3"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/github_svgrepo_com__1_"
+        android:textAllCaps="false"
+        android:text="Github"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/montserrat_semi_bold"
+        />
+
+
+
+</RelativeLayout>
